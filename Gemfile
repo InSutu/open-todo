@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+# gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap'
 gem 'bootstrap-sass'
@@ -12,10 +12,16 @@ gem 'haml'
 gem 'haml-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'json'
+gem 'rest-client'
+gem 'active_model_serializers'
+gem 'pg'
 
 group :development, :test do
   gem 'pry'
   gem 'binding_of_caller'
+  gem 'sqlite3'
+  gem 'better_errors'
 end
 
 group :test do
@@ -23,6 +29,11 @@ group :test do
   gem 'rspec-rails'  
   gem 'rspec'
 end
+
+group :production do #for Postgress DB - Heroku
+   gem 'pg'
+   gem 'rails_12factor'
+ end
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
